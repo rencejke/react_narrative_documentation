@@ -32,8 +32,16 @@ const Navigation = () => {
           <Link to="/dashboard/users" onClick={() => handleLinkClick('/dashboard/users')}><MdOutlineDashboard />Users</Link>
         </li>
 
-        <li className={`nav-link ${activeLink === '/users' ? 'active' : ''}`}>
+        <li className={`nav-link ${activeLink === '/dashboard/introduction' ? 'active' : ''}`}>
           <Link to="/dashboard/introduction" onClick={() => handleLinkClick('/dashboard/introduction')}><MdOutlineDashboard />Introduction</Link>
+        </li>
+
+        <li className={`nav-link ${activeLink === '/dashboard/cover' ? 'active' : ''}`}>
+          <Link to="/dashboard/cover" onClick={() => handleLinkClick('/dashboard/cover')}><MdOutlineDashboard />Cover</Link>
+        </li>
+        
+        <li className={`nav-link ${activeLink === '/dashboard/weeks' ? 'active' : ''}`}>
+          <Link to="/dashboard/weeks" onClick={() => handleLinkClick('/dashboard/weeks')}><MdOutlineDashboard />Weeks</Link>
         </li>
        
       </ul>

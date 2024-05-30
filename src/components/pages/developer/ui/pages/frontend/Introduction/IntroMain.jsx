@@ -20,4 +20,4 @@ const IntroMain = ({ isLoading, isFetching, intro }) => {
   );
 };
 
-export default IntroMain;
+export default IntroMain

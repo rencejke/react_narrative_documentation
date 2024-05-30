@@ -16,6 +16,20 @@ RewriteRule ^intro/active/([0-9]+)$ controllers/intro/active.php?introid=$1 [L]
 RewriteRule ^intro/search$ controllers/intro/search.php [L]
 
 
+### SETTING ROLES ###
+RewriteRule ^cover$ controllers/cover/cover.php [L]
+RewriteRule ^cover/([0-9]+)$ controllers/cover/cover.php?coverid=$1 [L]
+RewriteRule ^cover/active/([0-9]+)$ controllers/cover/active.php?coverid=$1 [L]
+RewriteRule ^cover/search$ controllers/cover/search.php [L]
+
+
+### SETTING ROLES ###
+RewriteRule ^weeks$ controllers/weeks/weeks.php [L]
+RewriteRule ^weeks/([0-9]+)$ controllers/weeks/weeks.php?weeksid=$1 [L]
+RewriteRule ^weeks/active/([0-9]+)$ controllers/weeks/active.php?weeksid=$1 [L]
+RewriteRule ^weeks/search$ controllers/weeks/search.php [L]
+
+
 ### SETTING USER###
 RewriteRule ^user$ controllers/user/user.php [L]
 RewriteRule ^user/([0-9]+)$ controllers/user/user.php?userid=$1 [L]

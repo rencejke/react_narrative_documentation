@@ -8,6 +8,10 @@ import Users from "./components/pages/developer/dashboard/user/Users";
 import Introduction from "./components/pages/developer/dashboard/Introduction/Introduction";
 import Home from "./components/pages/developer/ui/pages/frontend/Home";
 import UIIntroduction from "./components/pages/developer/ui/pages/frontend/Introduction/UIIntroduction";
+import UICover from "./components/pages/developer/ui/pages/frontend/Cover/UICover";
+import Cover from "./components/pages/developer/dashboard/cover/Cover";
+import Weeks from "./components/pages/developer/dashboard/weeks/Weeks";
+import UIWeeks from "./components/pages/developer/ui/pages/frontend/Weeks/UIWeeks";
 
 function App() {
 
@@ -22,8 +26,12 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard/portfolio" element={<ProtectedRoute><Portfolio /></ProtectedRoute>} />
         <Route path="/dashboard/users" element={<ProtectedRoute><Users /></ProtectedRoute>} />
-        <Route path="/dashboard/introduction" element={<ProtectedRoute><Introduction/></ProtectedRoute>} />
+        <Route path="/dashboard/introduction" element={<ProtectedRoute><Introduction/></ProtectedRoute>} /> 
+        <Route path="/dashboard/cover" element={<ProtectedRoute><Cover/></ProtectedRoute>} /> 
+        <Route path="/dashboard/weeks" element={<ProtectedRoute><Weeks/></ProtectedRoute>} /> 
+        <Route path="/weeks" element={<ProtectedRoute><UIWeeks/></ProtectedRoute>} /> 
         <Route path="/introduction" element={<UIIntroduction/>} />
+        <Route path="/cover" element={<UICover/>} />
         <Route path="*" element={<h2>Not Found</h2>} />
       </Routes>
     </Router>
