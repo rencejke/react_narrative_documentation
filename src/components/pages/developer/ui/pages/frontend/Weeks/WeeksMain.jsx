@@ -5,11 +5,15 @@ import remarkGfm from 'remark-gfm';
 import { useScroll, motion } from "framer-motion"
 
 const WeeksMain = ({ isLoading, isFetching, weeks }) => {
+  const { scrollYProgress } = useScroll();
     
   return (
-    <main className="w-full pt-[70px]"> 
-      <div className="container progress-bar">
-        <div className="content py-[100px]">
+    
+      <main className="w-full pt-[70px] relative"> 
+         <motion.div className="progress-bar z-[9999]"  style={{ scaleX: scrollYProgress }}></motion.div>
+      <div className="container ">
+        <div className=" content py-[100px]">
+  
           {isFetching && <SpinnerFetching />}
           {weeks?.data.map((item, key) => (
             item.weeks_is_active === 1 && (
@@ -19,6 +23,7 @@ const WeeksMain = ({ isLoading, isFetching, weeks }) => {
         </div>
       </div>
     </main>
+
   );
 };
 
