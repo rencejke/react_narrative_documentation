@@ -39,7 +39,7 @@ function App() {
 
         
 
-        <Route path="/weeks" element={<ProtectedRoute><UIWeeks/></ProtectedRoute>} /> 
+        <Route path="/weeks" element={<UIWeeks/>} /> 
         <Route path="/introduction" element={<UIIntroduction/>} />
         <Route path="/pictures" element={<UIPictures/>} />
         <Route path="/cover" element={<UICover/>} />

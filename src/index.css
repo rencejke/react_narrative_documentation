@@ -582,3 +582,11 @@
 .content.code ol li {
   @apply mb-1
 }
+.code
+{
+  @apply relative 
+}
+.code .copy-icon
+{
+  @apply absolute top-[1rem] right-[1rem] z-[5]
+}
