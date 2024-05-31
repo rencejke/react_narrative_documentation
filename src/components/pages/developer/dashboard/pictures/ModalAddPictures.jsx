@@ -11,7 +11,7 @@ import { queryData } from '../../../../helpers/queryData'
 import ModalWrapper from '../../../../partials/ModalWrapper'
 import { motion } from 'framer-motion'
 
-const ModalAddWeeks = ({itemEdit, position}) => {
+const ModalAddPictures = ({itemEdit, position}) => {
     const {store, dispatch} = React.useContext(StoreContext)
     const handleClose = () => dispatch(setIsAdd(false));
 
@@ -19,13 +19,13 @@ const ModalAddWeeks = ({itemEdit, position}) => {
     const mutation = useMutation({
         mutationFn: (values) =>
         queryData(
-            itemEdit ? `/v1/weeks/${itemEdit.weeks_aid}` :`/v1/weeks`,
+            itemEdit ? `/v1/pictures/${itemEdit.pictures_aid}` :`/v1/pictures`,
             itemEdit ? "put" : "post",
             values
         ),
    
         onSuccess: (data) => {
-        queryClient.invalidateQueries({ queryKey: ["weeks"] });
+        queryClient.invalidateQueries({ queryKey: ["pictures"] });
         if (data.success) {
             dispatch(setIsAdd(false));
             dispatch(setSuccess(true));
@@ -40,21 +40,17 @@ const ModalAddWeeks = ({itemEdit, position}) => {
 
     
      const initVal  = {
-          weeks_article : itemEdit ? itemEdit.weeks_article : "",   
-          weeks_title : itemEdit ? itemEdit.weeks_title : "",   
-          weeks_publish_date : itemEdit ? itemEdit.weeks_publish_date : "",   
+          pictures_article : itemEdit ? itemEdit.pictures_article : "",   
+          pictures_publish_date : itemEdit ? itemEdit.pictures_publish_date : "",   
      }
        
 
      const yupSchema = Yup.object({
   
-        weeks_article: Yup.string().required("Required"),
-        weeks_title: Yup.string().required("Required"),
-        weeks_publish_date: Yup.string().required("Required"),
+        pictures_article: Yup.string().required("Required"),
+        pictures_publish_date: Yup.string().required("Required"),
 
      })
-
-
 
   return (
     <div>
@@ -73,13 +69,8 @@ const ModalAddWeeks = ({itemEdit, position}) => {
                           initialValues={initVal}
                           validationSchema={yupSchema}
                           onSubmit={async (values, { setSubmitting, resetForm }) => {
-                            const updatedValues = {
-                              ...values,
-                              weeks_article: values.weeks_article.replace(/\\/g, ""),
-                            };
-                        
                             // mutate data
-                            mutation.mutate(updatedValues);
+                            mutation.mutate(values);
                           }}
                     >
                         {(props) => {
@@ -91,24 +82,12 @@ const ModalAddWeeks = ({itemEdit, position}) => {
 
                     <div className="grid grid-cols-[1fr_2fr] gap-10">
                         <div className="left">
-
-                        <div className="input-wrap">
-                          <InputTextArea
-                                label="Title"
-                                type="text"
-                                name="weeks_title"
-                                className='h-[11.5rem] resize-none'
-
-                            />
-                        </div>
-
-
     
                         <div className="input-wrap">
                         <InputText
                                 label="Publish Date"
                                 type="date"
-                                name="weeks_publish_date"
+                                name="pictures_publish_date"
                             />
                         </div>
                         </div>
@@ -118,7 +97,7 @@ const ModalAddWeeks = ({itemEdit, position}) => {
                           <InputTextArea
                                 label="Article"
                                 type="text"
-                                name="weeks_article"
+                                name="pictures_article"
                                 className='h-[22.5rem] resize-none'
                             />
                         </div>
@@ -141,4 +120,4 @@ const ModalAddWeeks = ({itemEdit, position}) => {
   )
 }
 
-export default ModalAddWeeks
+export default ModalAddPictures

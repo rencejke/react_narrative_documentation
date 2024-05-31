@@ -12,47 +12,44 @@ const UINavigation = () => {
               <Link to='/cover'>
                 <li>Cover</li>
               </Link>
+              <Link>
+                <li>Resume</li>
+              </Link>
+              <Link>
+                <li>Acknowledgement</li>
+              </Link>
+              <Link>
+                <li>Summary</li>
+              </Link>
+              <Link>
+                <li>Table of Contents</li>
+              </Link>
+              <Link>
+                <li>Objective</li>
+              </Link>
               <Link to='/introduction'>
                 <li>Introduction</li>
               </Link>
               <Link>
-                <li>Resume</li>
+                <li>Company Profile</li>
               </Link>
             </ul>
             <ul className="parent">
-              <h3 className="mb-1">Weeks</h3>
+              <h3 className="mb-1">Weekly Report</h3>
               <Link to="/weeks">
                 <li>Weeks</li>
               </Link>
-              <Link>
-                <li>Week 2</li>
-              </Link>
-              <Link>
-                <li>Week 3</li>
+            </ul>
+            <ul className="parent">
+              <h3 className="mb-1">Pictures Taken During OJT</h3>
+              <Link to="/pictures">
+                <li>Pictures</li>
               </Link>
             </ul>
             <ul className="parent">
-              <h3 className="mb-1">Parent</h3>
-              <Link>
-                <li>Child</li>
-              </Link>
-              <Link>
-                <li>Child</li>
-              </Link>
-              <Link>
-                <li>Child</li>
-              </Link>
-            </ul>
-            <ul className="parent">
-              <h3 className="mb-1">Parent</h3>
-              <Link>
-                <li>Child</li>
-              </Link>
-              <Link>
-                <li>Child</li>
-              </Link>
-              <Link>
-                <li>Child</li>
+              <h3 className="mb-1">Codes</h3>
+              <Link to="/code">
+                <li>React Install Guide</li>
               </Link>
             </ul>
             <ul className="parent">

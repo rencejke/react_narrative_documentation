@@ -29,6 +29,18 @@ RewriteRule ^weeks/([0-9]+)$ controllers/weeks/weeks.php?weeksid=$1 [L]
 RewriteRule ^weeks/active/([0-9]+)$ controllers/weeks/active.php?weeksid=$1 [L]
 RewriteRule ^weeks/search$ controllers/weeks/search.php [L]
 
+### SETTING ROLES ###
+RewriteRule ^pictures$ controllers/pictures/pictures.php [L]
+RewriteRule ^pictures/([0-9]+)$ controllers/pictures/pictures.php?picturesid=$1 [L]
+RewriteRule ^pictures/active/([0-9]+)$ controllers/pictures/active.php?picturesid=$1 [L]
+RewriteRule ^pictures/search$ controllers/pictures/search.php [L]
+
+### SETTING ROLES ###
+RewriteRule ^code$ controllers/code/code.php [L]
+RewriteRule ^code/([0-9]+)$ controllers/code/code.php?codeid=$1 [L]
+RewriteRule ^code/active/([0-9]+)$ controllers/code/active.php?codeid=$1 [L]
+RewriteRule ^code/search$ controllers/code/search.php [L]
+
 
 ### SETTING USER###
 RewriteRule ^user$ controllers/user/user.php [L]

@@ -11,7 +11,7 @@ import { queryData } from '../../../../helpers/queryData'
 import ModalWrapper from '../../../../partials/ModalWrapper'
 import { motion } from 'framer-motion'
 
-const ModalAddWeeks = ({itemEdit, position}) => {
+const ModalAddCode = ({itemEdit, position}) => {
     const {store, dispatch} = React.useContext(StoreContext)
     const handleClose = () => dispatch(setIsAdd(false));
 
@@ -19,13 +19,13 @@ const ModalAddWeeks = ({itemEdit, position}) => {
     const mutation = useMutation({
         mutationFn: (values) =>
         queryData(
-            itemEdit ? `/v1/weeks/${itemEdit.weeks_aid}` :`/v1/weeks`,
+            itemEdit ? `/v1/code/${itemEdit.code_aid}` :`/v1/code`,
             itemEdit ? "put" : "post",
             values
         ),
    
         onSuccess: (data) => {
-        queryClient.invalidateQueries({ queryKey: ["weeks"] });
+        queryClient.invalidateQueries({ queryKey: ["code"] });
         if (data.success) {
             dispatch(setIsAdd(false));
             dispatch(setSuccess(true));
@@ -40,21 +40,17 @@ const ModalAddWeeks = ({itemEdit, position}) => {
 
     
      const initVal  = {
-          weeks_article : itemEdit ? itemEdit.weeks_article : "",   
-          weeks_title : itemEdit ? itemEdit.weeks_title : "",   
-          weeks_publish_date : itemEdit ? itemEdit.weeks_publish_date : "",   
+          code_article : itemEdit ? itemEdit.code_article : "",   
+          code_publish_date : itemEdit ? itemEdit.code_publish_date : "",   
      }
        
 
      const yupSchema = Yup.object({
   
-        weeks_article: Yup.string().required("Required"),
-        weeks_title: Yup.string().required("Required"),
-        weeks_publish_date: Yup.string().required("Required"),
+        code_article: Yup.string().required("Required"),
+        code_publish_date: Yup.string().required("Required"),
 
      })
-
-
 
   return (
     <div>
@@ -70,17 +66,17 @@ const ModalAddWeeks = ({itemEdit, position}) => {
                 </div>
                 <div className="modal-body p-4">
                     <Formik
-                          initialValues={initVal}
-                          validationSchema={yupSchema}
-                          onSubmit={async (values, { setSubmitting, resetForm }) => {
-                            const updatedValues = {
-                              ...values,
-                              weeks_article: values.weeks_article.replace(/\\/g, ""),
-                            };
-                        
-                            // mutate data
-                            mutation.mutate(updatedValues);
-                          }}
+                        initialValues={initVal}
+                        validationSchema={yupSchema}
+                        onSubmit={async (values, { setSubmitting, resetForm }) => {
+                          const updatedValues = {
+                            ...values,
+                            code_article: values.code_article.replace(/\\/g, ""),
+                          };
+                      
+                          // mutate data
+                          mutation.mutate(updatedValues);
+                        }}
                     >
                         {(props) => {
                             return (
@@ -91,24 +87,12 @@ const ModalAddWeeks = ({itemEdit, position}) => {
 
                     <div className="grid grid-cols-[1fr_2fr] gap-10">
                         <div className="left">
-
-                        <div className="input-wrap">
-                          <InputTextArea
-                                label="Title"
-                                type="text"
-                                name="weeks_title"
-                                className='h-[11.5rem] resize-none'
-
-                            />
-                        </div>
-
-
     
                         <div className="input-wrap">
                         <InputText
                                 label="Publish Date"
                                 type="date"
-                                name="weeks_publish_date"
+                                name="code_publish_date"
                             />
                         </div>
                         </div>
@@ -118,7 +102,7 @@ const ModalAddWeeks = ({itemEdit, position}) => {
                           <InputTextArea
                                 label="Article"
                                 type="text"
-                                name="weeks_article"
+                                name="code_article"
                                 className='h-[22.5rem] resize-none'
                             />
                         </div>
@@ -141,4 +125,4 @@ const ModalAddWeeks = ({itemEdit, position}) => {
   )
 }
 
-export default ModalAddWeeks
+export default ModalAddCode

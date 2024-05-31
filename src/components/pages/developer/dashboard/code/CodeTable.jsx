@@ -9,7 +9,7 @@ import ModalDelete from '../../../../partials/modals/ModalDelete'
 import { StoreContext } from '../../../../../store/StoreContext'
 import { setIsActive, setIsAdd, setIsDelete } from '../../../../../store/StoreAction'
 
-const WeeksTable = ({setItemEdit, isLoading, isFetching, weeks}) => {
+const CodeTable = ({setItemEdit, isLoading, isFetching, code}) => {
     const {store, dispatch} = React.useContext(StoreContext)
     const [isArchiving, setIsArchiving] = React.useState(0);
     const [id, setId] = React.useState('');
@@ -26,18 +26,18 @@ const WeeksTable = ({setItemEdit, isLoading, isFetching, weeks}) => {
     // archive is here
     const handleActive = (item) => {
         dispatch(setIsActive(true));
-        setId(item.weeks_aid);
+        setId(item.code_aid);
         setIsArchiving(0);
     }
     const handleRestore = (item) => {
         dispatch(setIsActive(true));
-        setId(item.weeks_aid);
+        setId(item.code_aid);
         setIsArchiving(1);
     }
 
     const handleDelete = (item) => {
         dispatch(setIsDelete(true));
-        setId(item.weeks_aid);
+        setId(item.code_aid);
     }
 
   return (
@@ -64,24 +64,24 @@ const WeeksTable = ({setItemEdit, isLoading, isFetching, weeks}) => {
                 </tr>)
                 }
 
-                {weeks?.data.length === 0 && (
+                {code?.data.length === 0 && (
                     <tr>
                         <td colSpan={9}>
                             <NoData/>
                         </td>
                     </tr>
                 )}
-                    {weeks?.data.map((item, key) => (
+                    {code?.data.map((item, key) => (
                         <tr key={key}>
                         <td>{counter++}</td>
-                        <td>{item.weeks_title}</td>
-                        <td>{item.weeks_is_active === 1 ? "Yes" : "No"}</td>
-                        <td>{item.weeks_publish_date}</td>
+                        <td>{item.code_article}</td>
+                        <td>{item.code_is_active === 1 ? "Yes" : "No"}</td>
+                        <td>{item.code_publish_date}</td>
                         
                         
                         <td className='table-action'>
                         <ul>
-                            {item.weeks_is_active ? (
+                            {item.code_is_active ? (
                                 <>
                                     <li><button className="tooltip" data-tooltip="Edit" onClick={()=>handleEdit(item)}><LiaEdit/></button></li>
                                     <li><button className="tooltip" data-tooltip="Archive" onClick={()=>handleActive(item)}><PiArchive /></button></li>
@@ -102,12 +102,12 @@ const WeeksTable = ({setItemEdit, isLoading, isFetching, weeks}) => {
                     </table>
                 </div>
 
-                {store.isActive && <ModalConfirmed position="center"  queryKey="weeks" endpoint={`/v1/weeks/active/${id}`} isArchiving={isArchiving}/>}
+                {store.isActive && <ModalConfirmed position="center"  queryKey="code" endpoint={`/v1/code/active/${id}`} isArchiving={isArchiving}/>}
 
-                {store.isDelete && <ModalDelete position="center"  queryKey="weeks" endpoint={`/v1/weeks/${id}`} />} 
+                {store.isDelete && <ModalDelete position="center"  queryKey="code" endpoint={`/v1/code/${id}`} />} 
 
     </>
   )
 }
 
-export default WeeksTable
+export default CodeTable

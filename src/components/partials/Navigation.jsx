@@ -43,6 +43,14 @@ const Navigation = () => {
         <li className={`nav-link ${activeLink === '/dashboard/weeks' ? 'active' : ''}`}>
           <Link to="/dashboard/weeks" onClick={() => handleLinkClick('/dashboard/weeks')}><MdOutlineDashboard />Weeks</Link>
         </li>
+
+        <li className={`nav-link ${activeLink === '/dashboard/pictures' ? 'active' : ''}`}>
+          <Link to="/dashboard/pictures" onClick={() => handleLinkClick('/dashboard/pictures')}><MdOutlineDashboard />Pictures</Link>
+        </li>
+
+        <li className={`nav-link ${activeLink === '/dashboard/code' ? 'active' : ''}`}>
+          <Link to="/dashboard/code" onClick={() => handleLinkClick('/dashboard/code')}><MdOutlineDashboard />Codes</Link>
+        </li>
        
       </ul>
     </aside>

@@ -18,7 +18,7 @@ const CoverMain = ({ isLoading, isFetching, cover }) => {
             )
           ))}
           </div>
-          <div className="mt-20">
+          <div className="mt-[5rem]">
           {isFetching && <SpinnerFetching />}
           {cover?.data.map((item, key) => (
             item.cover_is_active === 1 && (

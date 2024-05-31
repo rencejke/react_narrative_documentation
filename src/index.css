@@ -541,4 +541,44 @@
   .progress-bar {
     @apply fixed top-[70px] left-[240px] right-0 h-[10px] w-[calc(100%-240px)] bg-accent origin-left scale-0
   }
-  
+
+  .content p
+{
+  @apply text-[16px] 
+}
+.content table th 
+{
+  @apply p-6 text-center
+}
+.content tr td
+{
+  @apply p-4
+}
+.content tr
+{
+  @apply text-[14px] leading-6
+}
+.pictures img
+{
+  @apply rounded-sm
+}
+.pictures h3
+{
+  @apply text-center pt-4
+}
+
+.selector {
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.content.code ol {
+  @apply list-decimal list-inside 
+}
+.content.code ol li {
+  @apply mb-1
+}
