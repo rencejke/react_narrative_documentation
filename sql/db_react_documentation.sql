@@ -3,9 +3,15 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Generation Time: May 31, 2024 at 12:17 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
+=======
+-- Generation Time: May 31, 2024 at 09:49 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
+>>>>>>> 12320540dd4f9e376fbbbac06c6911b89f07a6ee
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,7 +37,11 @@ CREATE TABLE `code` (
   `code_aid` int(11) NOT NULL,
   `code_article` text NOT NULL,
   `code_is_active` tinyint(1) NOT NULL,
+<<<<<<< HEAD
   `code_publish_date` varchar(20) NOT NULL,
+=======
+  `code_publish_date` int(20) NOT NULL,
+>>>>>>> 12320540dd4f9e376fbbbac06c6911b89f07a6ee
   `code_created` varchar(20) NOT NULL,
   `code_datetime` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -41,8 +51,13 @@ CREATE TABLE `code` (
 --
 
 INSERT INTO `code` (`code_aid`, `code_article`, `code_is_active`, `code_publish_date`, `code_created`, `code_datetime`) VALUES
+<<<<<<< HEAD
 (1, '# Setup Instructions\n\n&nbsp;\n\n## Setup React\n\n```javascript\n  npm create vite@latest .\n```\n\n1. Select Framework: **React**\n2. Select Variant: **JavaScript**\n\n&nbsp;\n\n## Install and Initialize TailwindCSS\n\n*Note 1: \\\"npm install\\\" and \\\"npm i\\\" are the same*\n\n*Note 2: multiple npm packages can be installed at the same time like the example below*\n\n```javascript\nnpm install -D tailwindcss postcss autoprefixer\n```\n```javascript\nnpx tailwindcss init -p\n```', 1, '2024', '2024-05-31 14:15:49', '2024-05-31 18:02:42'),
 (2, '````scss\n$font-stack: Helvetica, sans-serif;\n$primary-color: #333;\n\nbody {\n  font: 100% $font-stack;\n  color: $primary-color;\n}\n````', 1, '2024', '2024-05-31 15:15:26', '2024-05-31 15:48:58');
+=======
+(1, '## Setup React\n\n```javascript\n  npm create vite@latest .\n```\n\n1. First item\n2. Second item\n3. Third item\n4. Fourth item', 1, 2024, '2024-05-31 14:15:49', '2024-05-31 15:28:14'),
+(2, '````scss\n$font-stack: Helvetica, sans-serif;\n$primary-color: #333;\n\nbody {\n  font: 100% $font-stack;\n  color: $primary-color;\n}\n````', 1, 2024, '2024-05-31 15:15:26', '2024-05-31 15:48:58');
+>>>>>>> 12320540dd4f9e376fbbbac06c6911b89f07a6ee
 
 -- --------------------------------------------------------
 
