@@ -5,6 +5,7 @@ import NoInformation from "../../../../../../partials/NoInformation";
 import MarkDownCode from "./MarkDownCode";
 
 const CodeMain = ({ isLoading, isFetching, code }) => {
+
   return (
     <main className="w-full pt-[70px]">
       <div className="container">

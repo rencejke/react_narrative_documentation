@@ -3,15 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
-<<<<<<< HEAD
--- Generation Time: May 31, 2024 at 12:17 PM
+-- Generation Time: Jun 01, 2024 at 01:23 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
-=======
--- Generation Time: May 31, 2024 at 09:49 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
->>>>>>> 12320540dd4f9e376fbbbac06c6911b89f07a6ee
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,11 +31,7 @@ CREATE TABLE `code` (
   `code_aid` int(11) NOT NULL,
   `code_article` text NOT NULL,
   `code_is_active` tinyint(1) NOT NULL,
-<<<<<<< HEAD
   `code_publish_date` varchar(20) NOT NULL,
-=======
-  `code_publish_date` int(20) NOT NULL,
->>>>>>> 12320540dd4f9e376fbbbac06c6911b89f07a6ee
   `code_created` varchar(20) NOT NULL,
   `code_datetime` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -51,13 +41,29 @@ CREATE TABLE `code` (
 --
 
 INSERT INTO `code` (`code_aid`, `code_article`, `code_is_active`, `code_publish_date`, `code_created`, `code_datetime`) VALUES
-<<<<<<< HEAD
-(1, '# Setup Instructions\n\n&nbsp;\n\n## Setup React\n\n```javascript\n  npm create vite@latest .\n```\n\n1. Select Framework: **React**\n2. Select Variant: **JavaScript**\n\n&nbsp;\n\n## Install and Initialize TailwindCSS\n\n*Note 1: \\\"npm install\\\" and \\\"npm i\\\" are the same*\n\n*Note 2: multiple npm packages can be installed at the same time like the example below*\n\n```javascript\nnpm install -D tailwindcss postcss autoprefixer\n```\n```javascript\nnpx tailwindcss init -p\n```', 1, '2024', '2024-05-31 14:15:49', '2024-05-31 18:02:42'),
-(2, '````scss\n$font-stack: Helvetica, sans-serif;\n$primary-color: #333;\n\nbody {\n  font: 100% $font-stack;\n  color: $primary-color;\n}\n````', 1, '2024', '2024-05-31 15:15:26', '2024-05-31 15:48:58');
-=======
-(1, '## Setup React\n\n```javascript\n  npm create vite@latest .\n```\n\n1. First item\n2. Second item\n3. Third item\n4. Fourth item', 1, 2024, '2024-05-31 14:15:49', '2024-05-31 15:28:14'),
-(2, '````scss\n$font-stack: Helvetica, sans-serif;\n$primary-color: #333;\n\nbody {\n  font: 100% $font-stack;\n  color: $primary-color;\n}\n````', 1, 2024, '2024-05-31 15:15:26', '2024-05-31 15:48:58');
->>>>>>> 12320540dd4f9e376fbbbac06c6911b89f07a6ee
+(1, '![React JS Image](https://monomousumi.com/wp-content/uploads/react.png)\n\n&nbsp;\n\n# Setup Instructions\n\n&nbsp;\n\n## Setup React\n\n```javascript\n  npm create vite@latest .\n```\n\n1. Select Framework: **React**\n2. Select Variant: **JavaScript**\n\n&nbsp;\n\n## Install and Initialize TailwindCSS\n\n*Note 1: \\\"npm install\\\" and \\\"npm i\\\" are the same*\n\n*Note 2: multiple npm packages can be installed at the same time like the example below*\n\n```javascript\nnpm install -D tailwindcss postcss autoprefixer\n```\n```javascript\nnpx tailwindcss init -p\n```\n\n&nbsp;\n\n## Install React Router DOM\n\n```javascript\nnpm install react-router-dom\n```\n\n\n&nbsp;\n\n\n## Configure TailwindCSS\n\n- Remove predefined CSS inside src/index.css and add the following:\n\n\n````css\n@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\n@layer base{\n}\n@layer components{\n}\n@layer utilities{\n}\n````', 1, '2024-05-31', '2024-05-31 14:15:49', '2024-06-01 14:15:31'),
+(3, '&nbsp;\n\n## Alternatively, use the following command (for linux and git bash)\n\n````jsx\ncat > ./src/index.css << EOF\n@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\n@layer base{\n}\n@layer components{\n}\n@layer utilities{\n}\nEOF\n````', 1, '2024-06-01', '2024-06-01 11:28:33', '2024-06-01 11:30:30'),
+(4, '&nbsp;\n\n## Modify Tailwind Config Content Value\n\n````jsx\n// tailwind.config.cjs\nmodule.exports = {\n  content: [\\\"./src/**/*.{js,jsx}\\\"],\n  theme: {\n    extend: {},\n  },\n  plugins: [],\n}\n````', 1, '2024-06-01', '2024-06-01 11:30:00', '2024-06-01 11:30:47'),
+(5, '&nbsp;\n\n## Edit PostCSS Config\n\n````jsx\n// postcss.config.cjs\nmodule.exports = {\n  plugins: {\n    tailwindcss: {},\n    autoprefixer: {},\n  },\n};\n````', 1, '2024-06-01', '2024-06-01 11:31:59', '2024-06-01 11:31:59'),
+(6, '&nbsp;\n\n## Cleanup Vite Defaults\n\n1. Delete the default Vite assets like assets folder {./src/assets} & app.css.\n2. Add empty App.jsx contents:\n\n````jsx\n// src/App.jsx\nfunction App() {\n  return (\n    <>\n    </>\n  );\n}\nexport default App;\n````', 1, '2024-06-01', '2024-06-01 11:33:14', '2024-06-01 11:33:14'),
+(7, '&nbsp;\n\n## Sample of App.jsx using React Router\n\n````jsx\n// src/App.jsx\nimport { BrowserRouter as Router, Routes, Route } from \\\"react-router-dom\\\";\nimport Home from \\\"./components/pages/Home\\\";\n\nfunction App() {\n  return (\n    <Router>\n      <Routes>\n        {/* Page Example **/}\n        <Route path=\\\"/home\\\" element={<Home />} />\n        {/* Not Found Page Uses **/}\n        <Route path=\\\"*\\\" element={<h2>Not Found</h2>} />\n      </Routes>\n    </Router>\n  );\n}\nexport default App;\n````', 1, '2024-06-01', '2024-06-01 11:34:12', '2024-06-01 11:34:12'),
+(8, '&nbsp;\n\n## Run the Project\n\n````javascript\nnpm run dev\n````', 1, '2024-06-01', '2024-06-01 11:35:32', '2024-06-01 11:35:32'),
+(9, '&nbsp;\n\n# Additional notes\n\n---\n&nbsp;\n\n## ES7+ React/Redux/React-Native snippets (VSCode)\n\n1. Install the ES7+ React/Redux/React-Native snippets extension by dsznajder.\n2. Use shorthand rafce for creating a React functional component.\n\n````jsx\n// Example of \\\'rafce\\\' snippet output\nimport React from \\\'react\\\';\n\nconst Home = () => {\n  return (\n    <div>Home</div> {/* Insert HTML elements inside the div */}\n  );\n}\nexport default Home;\n````', 1, '2024-06-01', '2024-06-01 11:58:05', '2024-06-01 11:58:22'),
+(10, '&nbsp;\n\n## Using React Router DOM\n\n### Router, Routes, Route\n\n````jsx\nimport { BrowserRouter as Router, Routes, Route } from \\\"react-router-dom\\\";\nimport Home from \\\"./components/pages/Home\\\";\n\nfunction App() {\n  return (\n    <Router>\n      <Routes>\n        <Route path=\\\"/home\\\" element={<Home />} />\n        <Route path=\\\"/about\\\" element={<h2>About</h2>} />\n        <Route path=\\\"/services\\\" element={<h2>Services</h2>} />\n      </Routes>\n    </Router>\n  );\n}\nexport default App;\n````', 1, '2024-06-01', '2024-06-01 11:59:44', '2024-06-01 11:59:44'),
+(11, '### Link\n\n````jsx\nimport { Link } from \\\'react-router-dom\\\';\n\nconst NavBar = () => {\n  return (\n    <nav>\n      <Link to=\\\"/home\\\">Home</Link>\n      <Link to=\\\"/about\\\">About</Link>\n      <Link to=\\\"/services\\\">Services</Link>\n    </nav>\n  );\n}\nexport default NavBar;\n````', 1, '2024-06-01', '2024-06-01 12:00:42', '2024-06-01 12:01:00'),
+(12, '&nbsp;\n\n## functions-general.jsx\n\n````jsx\n// src/helpers/functions-general.jsx\nexport const baseImgUrl = \\\"http://localhost/react_intro/public/img/\\\"; // Hardcoded to localhost\nexport const baseImgUrl = \\\"../../img\\\"; // Relative path to img folder\n````', 1, '2024-05-31', '2024-06-01 12:01:58', '2024-06-01 12:01:58'),
+(13, '&nbsp;\n\n## Dynamic Page Titles\n\nADD THE CODE BELOW TO functions-general.jsx:\n\n````jsx\nexport const PageTitle = (newTitle) => {\n  return (document.title = newTitle);\n};\n````', 1, '2024-06-01', '2024-06-01 12:04:31', '2024-06-01 12:04:31'),
+(14, 'CALL IT PER PAGE LIKE BELOW:\n````jsx\nPageTitle(\\\"Blog - Blogee Website\\\");\n````', 1, '2024-06-01', '2024-06-01 12:05:34', '2024-06-01 12:05:34'),
+(15, '&nbsp;\n\n## Other npm packages\n\n**[React Icons ](https://www.npmjs.com/package/react-icons)** (for importing various icon libraries)\n\n```javascript\nnpm install react-icons\n````', 1, '2024-06-01', '2024-06-01 12:45:46', '2024-06-01 13:23:33'),
+(16, '**[Formik](https://www.npmjs.com/package/formik)** (for Forms)\n\n```javascript\nnpm install formik\n````', 1, '2024-06-01', '2024-06-01 13:05:12', '2024-06-01 13:23:27'),
+(17, '**[Formik](https://www.npmjs.com/package/yup)** (for Form Validation)\n\n```javascript\nnpm install yup\n````', 1, '2024-06-01', '2024-06-01 13:19:51', '2024-06-01 13:19:51'),
+(18, '**[Tanstack Query](https://tanstack.com/query/v3/docs/framework/react/overview)** (for db Query)\n\n```javascript\nnpm install @tanstack/react-query\n````', 1, '2024-06-01', '2024-06-01 13:21:37', '2024-06-01 13:21:37'),
+(19, '**[React Markdown](https://www.npmjs.com/package/react-markdown)**(for converting markdown to html-jsx elements)\n\n```javascript\nnpm install react-markdown\n````\n\nReference for Markdown **_[Markdownguide.org](https://www.markdownguide.org/)_**', 1, '2024-06-01', '2024-06-01 13:23:20', '2024-06-01 13:53:40'),
+(20, '**[React Slider](https://react-slick.neostack.com/docs/get-started)**(Slick Slider)\n\n```javascript\nnpm install react-slick slick-carousel\n````\n\n**_[Original Slick Slider website with demos & documentation](https://kenwheeler.github.io/slick/)_**', 1, '2024-06-01', '2024-06-01 13:36:00', '2024-06-01 13:53:32'),
+(21, '**[React pdfobject ](https://www.npmjs.com/package/react-pdfobject)**(For PDF Modal)\n\n```javascript\nnpm install react-pdfobject\n````', 1, '2024-06-01', '2024-06-01 13:39:32', '2024-06-01 13:53:20'),
+(22, '**[React Modal Image](https://www.npmjs.com/package/react-modal-image)**(for Image Modal lighter than Lightbox)\n\n```javascript\nnpm install react-modal-image\n````', 1, '2024-06-01', '2024-06-01 13:58:49', '2024-06-01 13:58:49'),
+(23, '&nbsp;\n\nWant to Install all of the packages mentioned above?\n\n###### Use Something Like this\n\n> npm i -D tailwindcss postcss autoprefixer react-router-dom react-icons formik yup @tanstack/react-query react-slick slick-carousel react-pdfobject react-modal-image react-markdown\n\n---', 1, '2024-06-01', '2024-06-01 14:00:11', '2024-06-01 14:09:18'),
+(24, '&nbsp;\n\n## Final Notes\n\n1. This README provides an example structured approach to setting up a React project with Vite, TailwindCSS, and React Router DOM.\n2. Follow the instructions carefully to ensure proper setup and configuration.\n3. Refer to the folder structure to understand where to place your files and components.\n\n> You can save this content as README.md in the root directory of your GitHub repository. This guide provides a clear and comprehensive setup process for a React project using Vite.', 1, '2024-06-01', '2024-06-01 14:08:38', '2024-06-01 14:09:29');
 
 -- --------------------------------------------------------
 
@@ -126,7 +132,12 @@ CREATE TABLE `pictures` (
 --
 
 INSERT INTO `pictures` (`pictures_aid`, `pictures_article`, `pictures_publish_date`, `pictures_is_active`, `pictures_created`, `pictures_datetime`) VALUES
-(1, '# Pictures Taken During OJT\n\n![March Company Fellowship](../../public/img/march-fellowship2.jpeg)\n\n![March Company Fellowship](../../public/img/march-fellowship1.jpeg)\n\n###  March Company Fellowship', '2024-05-31', 1, '2024-05-31 13:05:49', '2024-05-31 13:37:53');
+(1, '# Pictures Taken During OJT\n\n![March Company Fellowship](../../public/img/march-fellowship2.jpeg)\n\n![March Company Fellowship](../../public/img/march-fellowship1.jpeg)', '2024-05-31', 1, '2024-05-31 13:05:49', '2024-06-01 08:40:23'),
+(2, '![March Company Fellowship](../../public/img/m1.jpg)\n\n![March Company Fellowship](../../public/img/m2.jpg)\n\n![March Company Fellowship](../../public/img/m3.jpg)\n\n![March Company Fellowship](../../public/img/m4.jpg)\n\n![March Company Fellowship](../../public/img/m5.jpg)\n\n![March Company Fellowship](../../public/img/m6.jpg)', '2024-06-01', 1, '2024-06-01 08:36:06', '2024-06-01 08:38:42'),
+(3, '###  March Company Fellowship', '2024-06-01', 1, '2024-06-01 08:40:33', '2024-06-01 08:40:33'),
+(4, '![April Company Fellowship](../../public/img/a1.jpeg)\n\n![April Company Fellowship](../../public/img/a5.jpeg)\n\n![April Company Fellowship](../../public/img/a7.jpeg)', '2024-06-01', 1, '2024-06-01 10:23:44', '2024-06-01 10:23:44'),
+(5, '![April Company Fellowship](../../public/img/a2.jpeg)\n\n![April Company Fellowship](../../public/img/a3.jpeg)\n\n![April Company Fellowship](../../public/img/a4.jpeg)\n\n![April Company Fellowship](../../public/img/a6.jpeg)\n\n![April Company Fellowship](../../public/img/a7.jpeg)\n\n![April Company Fellowship](../../public/img/a8.jpeg)\n\n![April Company Fellowship](../../public/img/a4.jpeg)\n\n![April Company Fellowship](../../public/img/a9.jpeg)\n\n![April Company Fellowship](../../public/img/a10.jpeg)\n\n![April Company Fellowship](../../public/img/a11.jpeg)', '2024-06-01', 1, '2024-06-01 10:30:15', '2024-06-01 10:30:35'),
+(6, '###  April Company Fellowship', '2024-06-01', 1, '2024-06-01 10:31:00', '2024-06-01 10:31:00');
 
 -- --------------------------------------------------------
 
@@ -237,7 +248,7 @@ ALTER TABLE `weeks`
 -- AUTO_INCREMENT for table `code`
 --
 ALTER TABLE `code`
-  MODIFY `code_aid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `code_aid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `cover`
@@ -255,7 +266,7 @@ ALTER TABLE `intro`
 -- AUTO_INCREMENT for table `pictures`
 --
 ALTER TABLE `pictures`
-  MODIFY `pictures_aid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `pictures_aid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user`
